@@ -20,8 +20,7 @@ public class ExchangeRateApiSecurityConfiguration extends WebSecurityConfigurerA
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
                 .authorizeRequests().anyRequest().authenticated()
-                .and().httpBasic().and().exceptionHandling().accessDeniedPage("/401.html");
-
+                .and().httpBasic();
     }
 
     @Autowired
