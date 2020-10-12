@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Latest Ratest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+    table, th, td {
+  		border: 1px solid black;
+		}
+    </style>
+</head>
+<body>
+
+<p><h3>Below are rates against EUR</h3></p>
+
+    <table>
+    <tr>
+    <th>Currency</th>
+    <th th:text="${Date}"/>
+    </tr>
+    <tr>
+	    <td th:text="GBP" />
+	    <td th:text="${Rates.GBP}" />
+	</tr>
+	<tr>
+	<td th:text="USD" />
+	<td th:text="${Rates.USD}" />
+	</tr>
+	<tr>
+		<td th:text="HKD" />
+		<td th:text="${Rates.HKD}" />
+	</tr>
+    </table>
+    <br><br>
+    <a href="/api/gethistoricalrate">Click Here For Historical Rates Data</a> 
+</body>
+</html>

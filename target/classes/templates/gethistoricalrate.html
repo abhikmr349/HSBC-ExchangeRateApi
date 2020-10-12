@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Old Ratest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+    
+    
+    table, th, td {
+  		border: 1px solid black;
+		}
+    </style>
+</head>
+<body>
+    
+    <p>Below are rates against currency EUR for Previous months: </p>
+
+     <table>
+    <tr>
+    <th>Currency</th>
+   <th th:each="obj : ${historicalRateModelObject}" th:text="${obj.date}"/>
+    </tr>
+    <tr>
+	    <td th:text="GBP" />
+	    <td th:each="obj : ${historicalRateModelObject}" th:text="${obj.rates.GBP}" />
+	</tr>
+	<tr>
+	<td th:text="USD" />
+	<td th:each="obj : ${historicalRateModelObject}" th:text="${obj.rates.USD}" />
+	</tr>
+	<tr>
+		<td th:text="HKD" />
+	<td th:each="obj : ${historicalRateModelObject}" th:text="${obj.rates.HKD}" />
+	</tr>
+    </table>
+  
+  
+</body>
+</html>
